@@ -1,5 +1,7 @@
-const http = require('http')
-
+import http from "http"
+import name from './features.js'
+import love from "./LoveCalc.js";
+import fs from "fs"
 
 const server = http.createServer((req,res)=>{
     console.log(req)
@@ -7,7 +9,11 @@ const server = http.createServer((req,res)=>{
         res.end("<h1>This is about page</h1>")
 
     }else if(req.url === "/"){
-        res.end("<h1>This is home page</h1>")
+        fs.readFile("./index.html", (err,data)=>{
+        console.log(err)
+        res.end(data)
+        })
+       
     }else{
         res.end("<h1>Page not found 404</h1>")
     }
