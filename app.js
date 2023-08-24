@@ -3,7 +3,7 @@ import express from "express"
 
 const app = express()
 app.get("/",(req,res)=>{
-    res.json({//sending json
+    res.json({                  //sending json
 "name":"hehehehe",
     })
 })
